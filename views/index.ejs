@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('nav.ejs') %>
+    <div class="big">
+        <div class="middle">
+            <div class="category-tabs">
+                <button class="tab active">전체</button>
+                <button class="tab">📢 공지</button>
+            </div>              
+            <% for (let i = 0; i < 글목록.length; i++) { %>
+                <div class="list-box">
+                  <h4>
+                    <a href="/detail/<%= 글목록[i]._id %>">
+                      <%= 글목록[i].title %>
+                    </a>
+                  </h4>
+                  <div class="list-meta">
+                    <span><%= 글목록[i].author %></span>
+                    <span><%= 글목록[i].date %></span>
+                  </div>
+                </div>
+              <% } %>
+        </div> 
+        <div class="side">
+            <div class="small">div small1</div>
+            <div class="small">div small2</div>
+        </div>
+    </div>
+</body>
+</html>
