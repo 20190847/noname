@@ -23,3 +23,6 @@ app.get('/', async (요청, 응답) => {
 app.listen(3000, () => {
     console.log('서버 실행 중: http://localhost:3000');
 });
+app.get('/intro', async (요청, 응답) => {
+  응답.render('intro');
+});
